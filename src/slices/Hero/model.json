@@ -38,6 +38,50 @@
             "allowTargetBlank": true,
             "single": "paragraph"
           }
+        },
+        "button_text": {
+          "type": "Text",
+          "config": {
+            "label": "Button Text",
+            "placeholder": ""
+          }
+        },
+        "button_link": {
+          "type": "Link",
+          "config": {
+            "label": "Button Link",
+            "placeholder": "",
+            "select": null,
+            "allowTargetBlank": true,
+            "allowText": true,
+            "repeat": false
+          }
+        },
+        "cans_image": {
+          "type": "Image",
+          "config": {
+            "label": "Cans Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "second_heading": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Second Heading",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "heading2"
+          }
+        },
+        "second_body": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Second Body",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "paragraph,strong,em"
+          }
         }
       },
       "items": {}
