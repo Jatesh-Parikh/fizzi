@@ -84,40 +84,41 @@ const Carousel: FC<CarouselProps> = ({ slice }) => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="carousel relative flex h-screen flex-col items-center justify-center overflow-hidden bg-white py-12 text-white"
+      className="carousel relative grid h-screen grid-rows-[auto,4fr,auto] justify-center overflow-hidden bg-white py-12 text-white"
     >
       <div className="background pointer-events-none absolute inset-0 bg-[#710523] opacity-50" />
 
-      <WavyCircles className="absolute top-[50%] left-[50%] h-[120vmin] -translate-x-1/2 -translate-y-1/2 text-[#710523]" />
+      <WavyCircles className="absolute left-1/2 top-1/2 h-[120vmin] -translate-x-1/2 -translate-y-1/2 text-[#710523]" />
 
       <h2 className="relative text-center text-5xl font-bold">
         <PrismicText field={slice.primary.heading} />
       </h2>
 
-      <div className="flex flex-row items-center">
+      <div className="grid grid-cols-3 items-center justify-items-center gap-4 ">
         <ArrowButton
           onClick={() => changeFlavour(currentFlavourIndex + 1)}
           direction="left"
           label="Previous Flavour"
         />
+        <div className="flex justify-center z-50">
+          <View className="aspect-square h-[70vmin] min-h-40">
+            <Center position={[0, 0, 1.5]}>
+              <FloatingCan
+                ref={sodaCanRef}
+                floatIntensity={0.3}
+                rotationIntensity={1}
+                flavour={FLAVOURS[currentFlavourIndex].flavour}
+              />
+            </Center>
 
-        <View className="aspect-square h-[70vmin] min-h-40">
-          <Center position={[0, 0, 1.5]}>
-            <FloatingCan
-              ref={sodaCanRef}
-              floatIntensity={0.3}
-              rotationIntensity={1}
-              flavour={FLAVOURS[currentFlavourIndex].flavour}
+            <Environment
+              files="/hdr/lobby.hdr"
+              environmentIntensity={0.6}
+              environmentRotation={[0, 3, 0]}
             />
-          </Center>
-
-          <Environment
-            files="/hdr/lobby.hdr"
-            environmentIntensity={0.6}
-            environmentRotation={[0, 3, 0]}
-          />
-          <directionalLight intensity={6} position={[0, 1, 1]} />
-        </View>
+            <directionalLight intensity={6} position={[0, 1, 1]} />
+          </View>
+        </div>
 
         <ArrowButton
           onClick={() => changeFlavour(currentFlavourIndex - 1)}
