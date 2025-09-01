@@ -8,7 +8,7 @@ type Props = {
   className?: string;
 };
 
-export default function Button({ buttonLink, buttonText, className }: Props) {
+export default function Button({ buttonText, className }: Props) {
   return (
     // @ts-expect-error probably issue with types between Next.js and Prismic
     <PrismicNextLink
