@@ -48,7 +48,7 @@ const AlternatingText: FC<AlternatingTextProps> = ({ slice }) => {
                 <h2 className="text-6xl font-bold text-balance">
                   <PrismicText field={item.heading} />
                 </h2>
-                <div className="mt-4 text-xl">
+                <div className="mt-4 text-xl font-light">
                   <PrismicRichText field={item.body} />
                 </div>
               </div>
